@@ -21,7 +21,6 @@ def matrix_multiplication(matrix_a, matrix_b):
         for j in range(n):
           matrix_result[i][j] = sum(matrix_a[i][k] * matrix_b[k][j] for k in range(p))
     return matrix_result
-    pass
 
 def F(x, a11, a12, a13, flag):
   if flag:
@@ -81,7 +80,6 @@ def functions(a_1, a_2):
       # else:
       #   return []
       return result
-    pass
 
 
 def skew(x):
@@ -99,7 +97,6 @@ def skew(x):
       
     A3 = m3 / sigma ** 3
     return round(A3, 2)
-    pass
 
 
 def kurtosis(x):
@@ -117,4 +114,3 @@ def kurtosis(x):
       
     E4 = (m4 / sigma**4) - 3
     return round(E4, 2)
-    pass s
