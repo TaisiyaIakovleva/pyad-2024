@@ -1,5 +1,7 @@
 import numpy as np
 import scipy as sc
+from scipy.optimize import minimize_scalar
+import math
 
 
 def matrix_multiplication(matrix_a, matrix_b):
@@ -15,11 +17,11 @@ def matrix_multiplication(matrix_a, matrix_b):
     if (n != len(matrix_b)):
       print("Умножение выполнить не возможно")
     else:
-      matrix_result = [[0 for i in range(n)] for j in range(m)]
+      matrix_result = [[0 for i in range(p)] for j in range(m)]
 
       for i in range(m):
-        for j in range(n):
-          matrix_result[i][j] = sum(matrix_a[i][k] * matrix_b[k][j] for k in range(p))
+        for j in range(p):
+          matrix_result[i][j] = sum(matrix_a[i][k] * matrix_b[k][j] for k in range(n))
     return matrix_result
 
 def F(x, a11, a12, a13, flag):
@@ -87,11 +89,11 @@ def skew(x):
     Задание 3. Функция для расчета коэффициента асимметрии.
     Необходимо вернуть значение коэффициента асимметрии, округленное до 2 знаков после запятой.
     """
-    n = len(sample)
-    mean_sample = np.mean(sample)
+    n = len(x)
+    mean_sample = np.mean(x)
     
-    m2 = np.sum((sample - mean_sample) ** 2) / n
-    m3 = np.sum((sample - mean_sample) ** 3) / n
+    m2 = np.sum((x - mean_sample) ** 2) / n
+    m3 = np.sum((x - mean_sample) ** 3) / n
       
     sigma = np.sqrt(m2)
       
